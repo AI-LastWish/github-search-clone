@@ -1,3 +1,171 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.footer-hightlight {
+  color: #1976D2;
+}
+
+input:checked~.dot {
+  transform: translateX(100%);
+}
+
+input:checked~.bar {
+  background-color: rgb(37 99 235);
+}
+
+.tooltip {
+  @apply invisible absolute;
+}
+
+.has-tooltip:hover .tooltip {
+  @apply visible z-50;
+}
+
+@layer components {
+  .-ml-30 {
+    margin-left: -7.5rem
+      /* -120px */
+    ;
+  }
+
+  .heart-icon {
+    color: red
+  }
+
+  .x-circle {
+    color: rgba(0, 0, 0, 0.38);
+  }
+
+  .x-circle-dark {
+    color: white;
+  }
+
+  .no-like-icon {
+    color: rgba(0, 0, 0, 0.54);
+  }
+
+  .no-like-icon-dark {
+    color: white
+  }
+
+  .border-gray {
+    color: rgba(0, 0, 0, 0.42)
+  }
+
+  .min-h-70 {
+    min-height: 70vh;
+  }
+
+  .h-18 {
+    height: 4.5rem;
+    /* 72px */
+  }
+
+  .shadow-user {
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
+  }
+
+  .shadow-user-dark {
+    box-shadow: 0px 4px 4px rgba(255, 255, 255, 0.9);
+  }
+
+  .shadow-footer {
+    box-shadow: 0px -4px 4px rgba(0, 0, 0, 0.05);
+  }
+
+  .shadow-footer-dark {
+    box-shadow: 0px -4px 4px rgba(255, 255, 255, 0.95);
+  }
+
+  .bg-github-logo {
+    background: url('../public/images/GitHub-Mark/PNG/GitHub-Mark-120px-plus.png') no-repeat center center;
+  }
+
+  .bg-github-logo-dark {
+    background: url('../public/images/GitHub-Mark/PNG/GitHub-Mark-Light-120px-plus.png') no-repeat center center;
+  }
+
+  .bg-github-text {
+    background: url('../public/images/GitHub-Logos/GitHub_Logo.png') no-repeat center center;
+    background-size: contain;
+  }
+
+  .bg-github-text-dark {
+    background: url('../public/images/GitHub-Logos/GitHub_Logo_White.png') no-repeat center center;
+    background-size: contain;
+  }
+
+  /* pagination */
+  .Pagination {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    list-style: none;
+    outline: transparent;
+    @apply py-6
+  }
+
+  .Pagination>li {
+    margin: 0.125rem;
+    width: 1.875rem;
+    height: 1.875rem;
+  }
+
+  .Pagination>li>a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 1.875rem;
+    height: 1.875rem;
+    background-color: transparent;
+    border: 0.0625rem solid transparent;
+    outline: transparent;
+    cursor: pointer;
+    @apply rounded
+  }
+
+  .next-link,
+  .previous-link {
+    @apply  !rounded-full
+  }
+
+  .Pagination>li>a:hover {
+    background-color: #eee;
+  }
+
+  .Pagination>.Pagination__active>a {
+    background-color: blue;
+    border-color: blue;
+    color: white;
+  }
+
+  .Pagination>.Pagination__active>a,
+  .Pagination>.Pagination__active>a:hover,
+  .Pagination>.Pagination__active>a:focus {
+    background-color: #1976D2;
+    border-color: #1976D2;
+    outline: transparent;
+    cursor: default;
+  }
+
+  .Pagination>.disabled>a {
+    cursor: default;
+  }
+
+  .Pagination>.disabled>a svg {
+    fill: gray;
+  }
+
+  .Pagination>.disabled>a:hover {
+    background-color: transparent;
+  }
+
+}
