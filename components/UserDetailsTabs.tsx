@@ -54,8 +54,9 @@ const UserDetailsTabs = ({ selectedTab, userDetails, handleSelectedTab }: Props)
       <TabPanel>
         <div className='grid md:grid-cols-2 mx-auto w-full'>
           {
-            // @ts-ignore
-            selectedTab === Number(REPOSITORIES_TAB) && userDetails.user.repositories.nodes && userDetails.user.repositories.nodes.map(repo => (
+            selectedTab === Number(REPOSITORIES_TAB) &&
+            (userDetails as UserDetailsRepository).user.repositories.nodes &&
+            (userDetails as UserDetailsRepository).user.repositories.nodes.map(repo => (
               <RepositoryCard key={repo.id} repository={repo} />
             ))}
         </div>
@@ -63,8 +64,9 @@ const UserDetailsTabs = ({ selectedTab, userDetails, handleSelectedTab }: Props)
       <TabPanel>
         <div className='grid md:grid-cols-2 mx-auto w-full'>
           {
-            // @ts-ignore
-            selectedTab === Number(FOLLOWERS_TAB) && userDetails.user.followers.nodes && userDetails.user.followers.nodes.map(user => (
+            selectedTab === Number(FOLLOWERS_TAB) &&
+            (userDetails as UserDetailsFollowers).user.followers.nodes &&
+            (userDetails as UserDetailsFollowers).user.followers.nodes.map(user => (
               <UserCard key={user.id} user={user} isUserDetails={true} />
             ))}
         </div>
@@ -72,8 +74,9 @@ const UserDetailsTabs = ({ selectedTab, userDetails, handleSelectedTab }: Props)
       <TabPanel>
         <div className='grid md:grid-cols-2 mx-auto w-full'>
           {
-            // @ts-ignore
-            selectedTab === Number(FOLLOWINGS_TAB) && userDetails.user.following.nodes && userDetails.user.following.nodes.map(user => (
+            selectedTab === Number(FOLLOWINGS_TAB) &&
+            (userDetails as UserDetailsFollowing).user.following.nodes &&
+            (userDetails as UserDetailsFollowing).user.following.nodes.map(user => (
               <UserCard key={user.id} user={user} isUserDetails={true} />
             ))}
         </div>
