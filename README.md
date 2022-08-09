@@ -21,6 +21,7 @@ pnpm create next-app --example with-tailwindcss with-tailwindcss-app
 ```
 
 To run this application locally
+Generate your own Github-API token, then add it into next.config.js file
 ```bash
 yarn install
 yarn run dev
